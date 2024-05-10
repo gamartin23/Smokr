@@ -4,16 +4,26 @@ import json
 
 class gui:
     def __init__(self) -> None:
-        self.callJson()
+        self.window = ct.CTk()
+        self.version = 1.0
+        self.window.title(f'Smokr {self.version}')
+        self.window.resizable(False,False)
+        #self.window.iconbitmap(self.resourcePath('smokr.ico'))
+        self.window.after(200,self.callJson())
+        
+        self.mainFrame = ct.CTkFrame(self.window)
+        self.mainFrame.grid(row=0,column=0,padx=5,pady=5)
+        
+        self.window.mainloop()
     
     def callJson(self):
         with open('template.json', "r") as tcsuite:
             data = json.load(tcsuite)
-        test_cases = []
+        self.test_cases = []
         for item in data:
             test_case = TestCase(item["id"], item["name"], item.get("android_state", "Untested"), item.get("ios_state", "Untested"), item.get("android_comment", ""), item.get("ios_comment", ""), item.get("related_issues", []))
-            test_cases.append(test_case)
-        print(test_cases[32].name)
+            self.test_cases.append(test_case)
+        print(self.test_cases[32].name)
 
 
 class TestCase:
