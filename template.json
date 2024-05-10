@@ -1,7 +1,7 @@
 [
     {
         "id": "TC001",
-        "name": "Install latest Dev Build",
+        "name": "Install Build",
         "android_state": "Untested",
         "ios_state": "Untested",
         "android_comment": "",
