@@ -1,0 +1,44 @@
+{
+    "test_cases": [
+      {
+        "id": "TC001",
+        "name": "Build install",
+        "android_state": "Untested",
+        "ios_state": "Untested",
+        "android_comment": "",
+        "ios_comment": "",
+        "related_issues": [],
+        "comments": ""
+      },
+      {
+        "id": "TC002",
+        "name": "Terms & conditions",
+        "android_state": "Untested",
+        "ios_state": "Untested",
+        "android_comment": "",
+        "ios_comment": "",
+        "related_issues": [],
+        "comments": ""
+      },
+      {
+        "id": "TC003",
+        "name": "Birth date",
+        "android_state": "Untested",
+        "ios_state": "Untested",
+        "android_comment": "",
+        "ios_comment": "",
+        "related_issues": [],
+        "comments": ""
+      },
+      {
+        "id": "TC001",
+        "name": "",
+        "android_state": "Untested",
+        "ios_state": "Untested",
+        "android_comment": "",
+        "ios_comment": "",
+        "related_issues": [],
+        "comments": ""
+      }
+    ]
+  }
