@@ -9,12 +9,21 @@ class gui:
         self.window.title(f'Smokr {self.version}')
         self.window.resizable(False,False)
         #self.window.iconbitmap(self.resourcePath('smokr.ico'))
+        self.window.after(100,self.loadPossibleStati())
         self.window.after(200,self.callJson())
         
         self.mainFrame = ct.CTkFrame(self.window)
         self.mainFrame.grid(row=0,column=0,padx=5,pady=5)
         
         self.window.mainloop()
+    
+    def loadPossibleStati(self):
+        with open('status_template.json', "r") as tcstatus:
+            data = json.load(tcstatus)
+        self.stati = []
+        for status in data["Status"]:
+            self.stati.append(status)
+        print(self.stati)
     
     def callJson(self):
         with open('template.json', "r") as tcsuite:
@@ -23,7 +32,7 @@ class gui:
         for item in data:
             test_case = TestCase(item["id"], item["name"], item.get("android_state", "Untested"), item.get("ios_state", "Untested"), item.get("android_comment", ""), item.get("ios_comment", ""), item.get("related_issues", []))
             self.test_cases.append(test_case)
-        print(self.test_cases[32].name)
+        print(self.test_cases[0].name)
 
 
 class TestCase:
