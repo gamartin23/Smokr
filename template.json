@@ -4,8 +4,8 @@
       "name": "Install Build",
       "android_state": "Untested",
       "ios_state": "Untested",
-      "comments": "a",
-      "related_issues": ["1","2","3","4"]
+      "comments": "",
+      "related_issues": []
     },
     {
       "id": "TC002",

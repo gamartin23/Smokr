@@ -6,7 +6,7 @@ from testcase import TestCase
 class gui:
     def __init__(self) -> None:
         self.frameId = 0
-        self.frames = []        
+        self.frames = {}        
         
         self.window = ct.CTk()
         self.version = 1.0
@@ -34,6 +34,8 @@ class gui:
         self.relatedEntry.grid(row=3,column=0,pady=5,padx=5)
         self.relatedSend = ct.CTkButton(self.rightFrame,state='disabled',text='Save',command=self.saveNote)
         self.relatedSend.grid(row=4,column=0,pady=5,padx=5)
+        self.testbutton = ct.CTkButton(self.rightFrame,text='Test',command=self.updateFrame)
+        self.testbutton.grid(row=5,column=0,pady=5,padx=5)
         
         self.window.after(100,self.loadPossibleStati())
         self.window.after(200,self.callJson())
@@ -59,7 +61,7 @@ class gui:
         print(self.test_cases[0].name)
         
     def generateFrames(self):
-        self.frames = []
+        self.frames = {}
         self.frameId = 0
         try:
             self.scroller.grid_forget()
@@ -70,7 +72,7 @@ class gui:
         try:
             for testcase in self.test_cases:
                 frame = FrameTemplate(self.scroller,self.frameId,testcase,self.stati,self)
-                self.frames.append(frame)
+                self.frames[self.frameId] = frame
                 self.frameId += 1
                 #Let's be real, Tkinter was not made to support these many widgets. Don't fumble around with the screen. It'll be alright
         except Exception as e:
@@ -96,6 +98,29 @@ class gui:
         self.test_cases[self.currentNote].related_issues = issues
         print(self.test_cases[self.currentNote].comments,self.test_cases[self.currentNote].related_issues)
 
+    def updateFrame(self, listToUpdate):
+        for target in listToUpdate:
+            if isinstance (self.frames, dict):
+                updateMe = self.frames.get(target)
+            else:
+                pass
+            if updateMe:
+                updateMe.dropStatusIos.set(self.test_cases[target].ios_state)
+                updateMe.dropStatusAnd.set(self.test_cases[target].android_state)
+                if self.test_cases[target].android_state == self.test_cases[target].ios_state:
+                    if self.test_cases[target].android_state == 'Passed':
+                        updateMe.configure(fg_color='#27AE60')
+                    elif self.test_cases[target].android_state == 'Failed':
+                        updateMe.configure(fg_color='#C2392B')
+                    elif self.test_cases[target].android_state == 'Caution':
+                        updateMe.configure(fg_color='#D9A736')
+                    elif self.test_cases[target].android_state == 'N/A':
+                        updateMe.configure(fg_color='#7F8C8D')
+                    elif self.test_cases[target].android_state == 'CNT':
+                        updateMe.configure(fg_color='#2980B9')
+                print('Success')
+
+
 class FrameTemplate:
     def __init__(self, parent, frameId, element: TestCase, states, gui):
         self.frame_id = frameId
@@ -110,12 +135,12 @@ class FrameTemplate:
         labelTc.grid(row=0,column=0,pady=5,padx=5)
         labelName = ct.CTkLabel(frame,text=f'{self.tc.name}',wraplength=200)
         labelName.grid(row=0,column=1,pady=5,padx=5,sticky=W)
-        dropStatusIos = ct.CTkComboBox(frame,values=states,width=90,state='readonly')
-        dropStatusIos.grid(row=0,column=2,pady=5,padx=5,sticky=NSEW)
-        dropStatusIos.set(self.tc.ios_state)
-        dropStatusAnd = ct.CTkComboBox(frame,values=states,width=90,state='readonly')
-        dropStatusAnd.grid(row=0,column=3,pady=5,padx=5,sticky=NSEW)
-        dropStatusAnd.set(self.tc.android_state)
+        self.dropStatusIos = ct.CTkComboBox(frame,values=states,width=90,state='readonly')
+        self.dropStatusIos.grid(row=0,column=2,pady=5,padx=5,sticky=NSEW)
+        self.dropStatusIos.set(self.tc.ios_state)
+        self.dropStatusAnd = ct.CTkComboBox(frame,values=states,width=90,state='readonly')
+        self.dropStatusAnd.grid(row=0,column=3,pady=5,padx=5,sticky=NSEW)
+        self.dropStatusAnd.set(self.tc.android_state)
         if self.tc.android_state == self.tc.ios_state:
             if self.tc.android_state == 'Passed':
                 frame.configure(fg_color='#27AE60')
