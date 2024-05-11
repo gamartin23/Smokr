@@ -1,866 +1,754 @@
 [
     {
-        "id": "TC001",
-        "name": "Install Build",
-        "android_state": "Untested",
-        "ios_state": "Untested",
-        "android_comment": "",
-        "ios_comment": "",
-        "related_issues": []
-    },
-    {
-        "id": "TC002",
-        "name": "Terms & Conditions",
-        "android_state": "Untested",
-        "ios_state": "Untested",
-        "android_comment": "",
-        "ios_comment": "",
-        "related_issues": []
-    },
-    {
-        "id": "TC003",
-        "name": "Birth Date",
-        "android_state": "Untested",
-        "ios_state": "Untested",
-        "android_comment": "",
-        "ios_comment": "",
-        "related_issues": []
-    },
-    {
-        "id": "TC004",
-        "name": "Login",
-        "android_state": "Untested",
-        "ios_state": "Untested",
-        "android_comment": "",
-        "ios_comment": "",
-        "related_issues": []
-    },
-    {
-        "id": "TC005",
-        "name": "Splash Screen",
-        "android_state": "Untested",
-        "ios_state": "Untested",
-        "android_comment": "",
-        "ios_comment": "",
-        "related_issues": []
-    },
-    {
-        "id": "TC006",
-        "name": "Loading screens",
-        "android_state": "Untested",
-        "ios_state": "Untested",
-        "android_comment": "",
-        "ios_comment": "",
-        "related_issues": []
-    },
-    {
-        "id": "TC007",
-        "name": "FTUE: Locked input",
-        "android_state": "Untested",
-        "ios_state": "Untested",
-        "android_comment": "",
-        "ios_comment": "",
-        "related_issues": []
-    },
-    {
-        "id": "TC008",
-        "name": "FTUE: Can't lose first fight",
-        "android_state": "Untested",
-        "ios_state": "Untested",
-        "android_comment": "",
-        "ios_comment": "",
-        "related_issues": []
-    },
-    {
-        "id": "TC009",
-        "name": "FTUE: Purchase free item",
-        "android_state": "Untested",
-        "ios_state": "Untested",
-        "android_comment": "",
-        "ios_comment": "",
-        "related_issues": []
-    },
-    {
-        "id": "TC010",
-        "name": "FTUE: Unlock wrestler",
-        "android_state": "Untested",
-        "ios_state": "Untested",
-        "android_comment": "",
-        "ios_comment": "",
-        "related_issues": []
-    },
-    {
-        "id": "TC011",
-        "name": "FTUE: Second fight is playable",
-        "android_state": "Untested",
-        "ios_state": "Untested",
-        "android_comment": "",
-        "ios_comment": "",
-        "related_issues": []
-    },
-    {
-        "id": "TC012",
-        "name": "FTUE: Level up",
-        "android_state": "Untested",
-        "ios_state": "Untested",
-        "android_comment": "",
-        "ios_comment": "",
-        "related_issues": []
-    },
-    {
-        "id": "TC013",
-        "name": "FTUE: Completed",
-        "android_state": "Untested",
-        "ios_state": "Untested",
-        "android_comment": "",
-        "ios_comment": "",
-        "related_issues": []
-    },
-    {
-        "id": "TC014",
-        "name": "Main Menu: Appearance and functionality",
-        "android_state": "Untested",
-        "ios_state": "Untested",
-        "android_comment": "",
-        "ios_comment": "",
-        "related_issues": []
-    },
-    {
-        "id": "TC015",
-        "name": "Main Menu: Currencies HUD",
-        "android_state": "Untested",
-        "ios_state": "Untested",
-        "android_comment": "",
-        "ios_comment": "",
-        "related_issues": []
-    },
-    {
-        "id": "TC016",
-        "name": "Main Menu: Player profile",
-        "android_state": "Untested",
-        "ios_state": "Untested",
-        "android_comment": "",
-        "ios_comment": "",
-        "related_issues": []
-    },
-    {
-        "id": "TC017",
-        "name": "Main Menu: Tabs functionality",
-        "android_state": "Untested",
-        "ios_state": "Untested",
-        "android_comment": "",
-        "ios_comment": "",
-        "related_issues": []
-    },
-    {
-        "id": "TC018",
-        "name": "Main Menu: Resume Campaign functionality",
-        "android_state": "Untested",
-        "ios_state": "Untested",
-        "android_comment": "",
-        "ios_comment": "",
-        "related_issues": []
-    },
-    {
-        "id": "TC019",
-        "name": "Main Menu: Notification badges",
-        "android_state": "Untested",
-        "ios_state": "Untested",
-        "android_comment": "",
-        "ios_comment": "",
-        "related_issues": []
-    },
-    {
-        "id": "TC020",
-        "name": "Player Profile: Change the Portrait",
-        "android_state": "Untested",
-        "ios_state": "Untested",
-        "android_comment": "",
-        "ios_comment": "",
-        "related_issues": []
-    },
-    {
-        "id": "TC021",
-        "name": "Player Profile: Change Username",
-        "android_state": "Untested",
-        "ios_state": "Untested",
-        "android_comment": "",
-        "ios_comment": "",
-        "related_issues": []
-    },
-    {
-        "id": "TC022",
-        "name": "Player Profile: Top 3 wrestlers are shown",
-        "android_state": "Untested",
-        "ios_state": "Untested",
-        "android_comment": "",
-        "ios_comment": "",
-        "related_issues": []
-    },
-    {
-        "id": "TC023",
-        "name": "Player Profile: Wallet alogin",
-        "android_state": "Untested",
-        "ios_state": "Untested",
-        "android_comment": "",
-        "ios_comment": "",
-        "related_issues": []
-    },
-    {
-        "id": "TC024",
-        "name": "Player Profile: Statistics",
-        "android_state": "Untested",
-        "ios_state": "Untested",
-        "android_comment": "",
-        "ios_comment": "",
-        "related_issues": []
-    },
-    {
-        "id": "TC025",
-        "name": "Player Profile: Level up animation",
-        "android_state": "Untested",
-        "ios_state": "Untested",
-        "android_comment": "",
-        "ios_comment": "",
-        "related_issues": []
-    },
-    {
-        "id": "TC026",
-        "name": "Inbox: Recieve messages",
-        "android_state": "Untested",
-        "ios_state": "Untested",
-        "android_comment": "",
-        "ios_comment": "",
-        "related_issues": []
-    },
-    {
-        "id": "TC027",
-        "name": "Inbox: Notification badge",
-        "android_state": "Untested",
-        "ios_state": "Untested",
-        "android_comment": "",
-        "ios_comment": "",
-        "related_issues": []
-    },
-    {
-        "id": "TC028",
-        "name": "Inbox: Delete messages",
-        "android_state": "Untested",
-        "ios_state": "Untested",
-        "android_comment": "",
-        "ios_comment": "",
-        "related_issues": []
-    },
-    {
-        "id": "TC029",
-        "name": "Inbox: Claim all button",
-        "android_state": "Untested",
-        "ios_state": "Untested",
-        "android_comment": "",
-        "ios_comment": "",
-        "related_issues": []
-    },
-    {
-        "id": "TC030",
-        "name": "Roster: Default order is A-Z, unlocked first",
-        "android_state": "Untested",
-        "ios_state": "Untested",
-        "android_comment": "",
-        "ios_comment": "",
-        "related_issues": []
-    },
-    {
-        "id": "TC031",
-        "name": "Roster: Change sorting",
-        "android_state": "Untested",
-        "ios_state": "Untested",
-        "android_comment": "",
-        "ios_comment": "",
-        "related_issues": []
-    },
-    {
-        "id": "TC032",
-        "name": "Roster: Rank up and level up functionality",
-        "android_state": "Untested",
-        "ios_state": "Untested",
-        "android_comment": "",
-        "ios_comment": "",
-        "related_issues": []
-    },
-    {
-        "id": "TC033",
-        "name": "Roster: Rank up and level up are locked for locked wrestlers",
-        "android_state": "Untested",
-        "ios_state": "Untested",
-        "android_comment": "",
-        "ios_comment": "",
-        "related_issues": []
-    },
-    {
-        "id": "TC034",
-        "name": "Roster: Unlock and level up",
-        "android_state": "Untested",
-        "ios_state": "Untested",
-        "android_comment": "",
-        "ios_comment": "",
-        "related_issues": []
-    },
-    {
-        "id": "TC035",
-        "name": "Roster: Power score is available and functional",
-        "android_state": "Untested",
-        "ios_state": "Untested",
-        "android_comment": "",
-        "ios_comment": "",
-        "related_issues": []
-    },
-    {
-        "id": "TC036",
-        "name": "Roster: Rank up a wrestler's moves",
-        "android_state": "Untested",
-        "ios_state": "Untested",
-        "android_comment": "",
-        "ios_comment": "",
-        "related_issues": []
-    },
-    {
-        "id": "TC037",
-        "name": "Roster: Craft all gear items for a wrestler",
-        "android_state": "Untested",
-        "ios_state": "Untested",
-        "android_comment": "",
-        "ios_comment": "",
-        "related_issues": []
-    },
-    {
-        "id": "TC038",
-        "name": "Roster: Level up gear items for a wrestler",
-        "android_state": "Untested",
-        "ios_state": "Untested",
-        "android_comment": "",
-        "ios_comment": "",
-        "related_issues": []
-    },
-    {
-        "id": "TC039",
-        "name": "Store: Currencies HUD",
-        "android_state": "Untested",
-        "ios_state": "Untested",
-        "android_comment": "",
-        "ios_comment": "",
-        "related_issues": []
-    },
-    {
-        "id": "TC040",
-        "name": "Store: FTUE Item does not reappear",
-        "android_state": "Untested",
-        "ios_state": "Untested",
-        "android_comment": "",
-        "ios_comment": "",
-        "related_issues": []
-    },
-    {
-        "id": "TC041",
-        "name": "Store: Purchase an item",
-        "android_state": "Untested",
-        "ios_state": "Untested",
-        "android_comment": "",
-        "ios_comment": "",
-        "related_issues": []
-    },
-    {
-        "id": "TC042",
-        "name": "Store: Limited items have a purchase limit",
-        "android_state": "Untested",
-        "ios_state": "Untested",
-        "android_comment": "",
-        "ios_comment": "",
-        "related_issues": []
-    },
-    {
-        "id": "TC043",
-        "name": "Store: Purchase an NFT",
-        "android_state": "Untested",
-        "ios_state": "Untested",
-        "android_comment": "",
-        "ios_comment": "",
-        "related_issues": []
-    },
-    {
-        "id": "TC044",
-        "name": "Store: Purchase an IAP character offer",
-        "android_state": "Untested",
-        "ios_state": "Untested",
-        "android_comment": "",
-        "ios_comment": "",
-        "related_issues": []
-    },
-    {
-        "id": "TC045",
-        "name": "Store: Purchase an IAP pack offer",
-        "android_state": "Untested",
-        "ios_state": "Untested",
-        "android_comment": "",
-        "ios_comment": "",
-        "related_issues": []
-    },
-    {
-        "id": "TC046",
-        "name": "Store: Purchase currency IAP",
-        "android_state": "Untested",
-        "ios_state": "Untested",
-        "android_comment": "",
-        "ios_comment": "",
-        "related_issues": []
-    },
-    {
-        "id": "TC047",
-        "name": "Store: Verify some items have the \"x more!\"and \"% more!\" label",
-        "android_state": "Untested",
-        "ios_state": "Untested",
-        "android_comment": "",
-        "ios_comment": "",
-        "related_issues": []
-    },
-    {
-        "id": "TC048",
-        "name": "Store: Verify some items have the \"Most popular\" and \"Best Value\" label",
-        "android_state": "Untested",
-        "ios_state": "Untested",
-        "android_comment": "",
-        "ios_comment": "",
-        "related_issues": []
-    },
-    {
-        "id": "TC049",
-        "name": "Store: \"New\" label disappears after first store visit",
-        "android_state": "Untested",
-        "ios_state": "Untested",
-        "android_comment": "",
-        "ios_comment": "",
-        "related_issues": []
-    },
-    {
-        "id": "TC050",
-        "name": "Store: Tooltips and info buttons functionality",
-        "android_state": "Untested",
-        "ios_state": "Untested",
-        "android_comment": "",
-        "ios_comment": "",
-        "related_issues": []
-    },
-    {
-        "id": "TC051",
-        "name": "Campaign: Screen displays correctly",
-        "android_state": "Untested",
-        "ios_state": "Untested",
-        "android_comment": "",
-        "ios_comment": "",
-        "related_issues": []
-    },
-    {
-        "id": "TC052",
-        "name": "Campaign: Lose functionality",
-        "android_state": "Untested",
-        "ios_state": "Untested",
-        "android_comment": "",
-        "ios_comment": "",
-        "related_issues": []
-    },
-    {
-        "id": "TC053",
-        "name": "Campaign: Win functionality",
-        "android_state": "Untested",
-        "ios_state": "Untested",
-        "android_comment": "",
-        "ios_comment": "",
-        "related_issues": []
-    },
-    {
-        "id": "TC054",
-        "name": "Campaign: Earn 1, 2, and 3 stars",
-        "android_state": "Untested",
-        "ios_state": "Untested",
-        "android_comment": "",
-        "ios_comment": "",
-        "related_issues": []
-    },
-    {
-        "id": "TC055",
-        "name": "Campaign: Rewards",
-        "android_state": "Untested",
-        "ios_state": "Untested",
-        "android_comment": "",
-        "ios_comment": "",
-        "related_issues": []
-    },
-    {
-        "id": "TC056",
-        "name": "Campaign: Verify only unlocked characters can be used",
-        "android_state": "Untested",
-        "ios_state": "Untested",
-        "android_comment": "",
-        "ios_comment": "",
-        "related_issues": []
-    },
-    {
-        "id": "TC057",
-        "name": "Campaign: Energy deduction",
-        "android_state": "Untested",
-        "ios_state": "Untested",
-        "android_comment": "",
-        "ios_comment": "",
-        "related_issues": []
-    },
-    {
-        "id": "TC058",
-        "name": "Battle: Pause and resume",
-        "android_state": "Untested",
-        "ios_state": "Untested",
-        "android_comment": "",
-        "ios_comment": "",
-        "related_issues": []
-    },
-    {
-        "id": "TC059",
-        "name": "Battle: Pause and quit",
-        "android_state": "Untested",
-        "ios_state": "Untested",
-        "android_comment": "",
-        "ios_comment": "",
-        "related_issues": []
-    },
-    {
-        "id": "TC060",
-        "name": "Battle: HP Bar functionality",
-        "android_state": "Untested",
-        "ios_state": "Untested",
-        "android_comment": "",
-        "ios_comment": "",
-        "related_issues": []
-    },
-    {
-        "id": "TC061",
-        "name": "Battle: Tooltips on characters",
-        "android_state": "Untested",
-        "ios_state": "Untested",
-        "android_comment": "",
-        "ios_comment": "",
-        "related_issues": []
-    },
-    {
-        "id": "TC062",
-        "name": "Battle: Status effect icons and tooltips",
-        "android_state": "Untested",
-        "ios_state": "Untested",
-        "android_comment": "",
-        "ios_comment": "",
-        "related_issues": []
-    },
-    {
-        "id": "TC063",
-        "name": "Battle: Tooltips pause the fight",
-        "android_state": "Untested",
-        "ios_state": "Untested",
-        "android_comment": "",
-        "ios_comment": "",
-        "related_issues": []
-    },
-    {
-        "id": "TC064",
-        "name": "Battle: Common moves can be tapped",
-        "android_state": "Untested",
-        "ios_state": "Untested",
-        "android_comment": "",
-        "ios_comment": "",
-        "related_issues": []
-    },
-    {
-        "id": "TC065",
-        "name": "Battle: Common moves deal damage",
-        "android_state": "Untested",
-        "ios_state": "Untested",
-        "android_comment": "",
-        "ios_comment": "",
-        "related_issues": []
-    },
-    {
-        "id": "TC066",
-        "name": "Battle: Special moves can be tapped",
-        "android_state": "Untested",
-        "ios_state": "Untested",
-        "android_comment": "",
-        "ios_comment": "",
-        "related_issues": []
-    },
-    {
-        "id": "TC067",
-        "name": "Battle: Special moves deal damage",
-        "android_state": "Untested",
-        "ios_state": "Untested",
-        "android_comment": "",
-        "ios_comment": "",
-        "related_issues": []
-    },
-    {
-        "id": "TC068",
-        "name": "Battle: Friend or foe outline",
-        "android_state": "Untested",
-        "ios_state": "Untested",
-        "android_comment": "",
-        "ios_comment": "",
-        "related_issues": []
-    },
-    {
-        "id": "TC069",
-        "name": "Battle: Finisher icon functionality",
-        "android_state": "Untested",
-        "ios_state": "Untested",
-        "android_comment": "",
-        "ios_comment": "",
-        "related_issues": []
-    },
-    {
-        "id": "TC070",
-        "name": "Battle: Finisher move functionality",
-        "android_state": "Untested",
-        "ios_state": "Untested",
-        "android_comment": "",
-        "ios_comment": "",
-        "related_issues": []
-    },
-    {
-        "id": "TC071",
-        "name": "Battle: Not using Finisher - Pindown",
-        "android_state": "Untested",
-        "ios_state": "Untested",
-        "android_comment": "",
-        "ios_comment": "",
-        "related_issues": []
-    },
-    {
-        "id": "TC072",
-        "name": "Challenges: Functionality",
-        "android_state": "Untested",
-        "ios_state": "Untested",
-        "android_comment": "",
-        "ios_comment": "",
-        "related_issues": []
-    },
-    {
-        "id": "TC073",
-        "name": "Challenges: Rewards are well defined",
-        "android_state": "Untested",
-        "ios_state": "Untested",
-        "android_comment": "",
-        "ios_comment": "",
-        "related_issues": []
-    },
-    {
-        "id": "TC074",
-        "name": "Challenges: Only 1 star gets displayed",
-        "android_state": "Untested",
-        "ios_state": "Untested",
-        "android_comment": "",
-        "ios_comment": "",
-        "related_issues": []
-    },
-    {
-        "id": "TC075",
-        "name": "Challenges: Progression",
-        "android_state": "Untested",
-        "ios_state": "Untested",
-        "android_comment": "",
-        "ios_comment": "",
-        "related_issues": []
-    },
-    {
-        "id": "TC076",
-        "name": "Challenges: Timers",
-        "android_state": "Untested",
-        "ios_state": "Untested",
-        "android_comment": "",
-        "ios_comment": "",
-        "related_issues": []
-    },
-    {
-        "id": "TC077",
-        "name": "Farming Events: Calendar correct",
-        "android_state": "Untested",
-        "ios_state": "Untested",
-        "android_comment": "",
-        "ios_comment": "",
-        "related_issues": []
-    },
-    {
-        "id": "TC078",
-        "name": "Farming Events: 3 matches limit",
-        "android_state": "Untested",
-        "ios_state": "Untested",
-        "android_comment": "",
-        "ios_comment": "",
-        "related_issues": []
-    },
-    {
-        "id": "TC079",
-        "name": "Farming Events: Autoplay works correctly",
-        "android_state": "Untested",
-        "ios_state": "Untested",
-        "android_comment": "",
-        "ios_comment": "",
-        "related_issues": []
-    },
-    {
-        "id": "TC080",
-        "name": "PvP Events: Forced to select defender on first entry",
-        "android_state": "Untested",
-        "ios_state": "Untested",
-        "android_comment": "",
-        "ios_comment": "",
-        "related_issues": []
-    },
-    {
-        "id": "TC081",
-        "name": "PvP Events: Defender selection",
-        "android_state": "Untested",
-        "ios_state": "Untested",
-        "android_comment": "",
-        "ios_comment": "",
-        "related_issues": []
-    },
-    {
-        "id": "TC082",
-        "name": "PvP Events: Play matches",
-        "android_state": "Untested",
-        "ios_state": "Untested",
-        "android_comment": "",
-        "ios_comment": "",
-        "related_issues": []
-    },
-    {
-        "id": "TC083",
-        "name": "PvP Events: Verify win and lose point conditions",
-        "android_state": "Untested",
-        "ios_state": "Untested",
-        "android_comment": "",
-        "ios_comment": "",
-        "related_issues": []
-    },
-    {
-        "id": "TC084",
-        "name": "PvP Events: Rewards unlock",
-        "android_state": "Untested",
-        "ios_state": "Untested",
-        "android_comment": "",
-        "ios_comment": "",
-        "related_issues": []
-    },
-    {
-        "id": "TC085",
-        "name": "PvP Events: Leaderboard updates",
-        "android_state": "Untested",
-        "ios_state": "Untested",
-        "android_comment": "",
-        "ios_comment": "",
-        "related_issues": []
-    },
-    {
-        "id": "TC086",
-        "name": "Daily login: Functionality",
-        "android_state": "Untested",
-        "ios_state": "Untested",
-        "android_comment": "",
-        "ios_comment": "",
-        "related_issues": []
-    },
-    {
-        "id": "TC087",
-        "name": "Daily login: Past rewards can be purchased",
-        "android_state": "Untested",
-        "ios_state": "Untested",
-        "android_comment": "",
-        "ios_comment": "",
-        "related_issues": []
-    },
-    {
-        "id": "TC088",
-        "name": "Daily missions: Functionality",
-        "android_state": "Untested",
-        "ios_state": "Untested",
-        "android_comment": "",
-        "ios_comment": "",
-        "related_issues": []
-    },
-    {
-        "id": "TC089",
-        "name": "Daily missions: Claim",
-        "android_state": "Untested",
-        "ios_state": "Untested",
-        "android_comment": "",
-        "ios_comment": "",
-        "related_issues": []
-    },
-    {
-        "id": "TC090",
-        "name": "Daily missions: Claim all",
-        "android_state": "Untested",
-        "ios_state": "Untested",
-        "android_comment": "",
-        "ios_comment": "",
-        "related_issues": []
-    },
-    {
-        "id": "TC091",
-        "name": "Weekly missions: Functionality",
-        "android_state": "Untested",
-        "ios_state": "Untested",
-        "android_comment": "",
-        "ios_comment": "",
-        "related_issues": []
-    },
-    {
-        "id": "TC092",
-        "name": "Weekly missions: Claim",
-        "android_state": "Untested",
-        "ios_state": "Untested",
-        "android_comment": "",
-        "ios_comment": "",
-        "related_issues": []
-    },
-    {
-        "id": "TC093",
-        "name": "Weekly missions: Claim all",
-        "android_state": "Untested",
-        "ios_state": "Untested",
-        "android_comment": "",
-        "ios_comment": "",
-        "related_issues": []
-    },
-    {
-        "id": "TC094",
-        "name": "Lifetime missions: Functionality",
-        "android_state": "Untested",
-        "ios_state": "Untested",
-        "android_comment": "",
-        "ios_comment": "",
-        "related_issues": []
-    },
-    {
-        "id": "TC095",
-        "name": "Lifetime missions: Claim",
-        "android_state": "Untested",
-        "ios_state": "Untested",
-        "android_comment": "",
-        "ios_comment": "",
-        "related_issues": []
-    },
-    {
-        "id": "TC096",
-        "name": "Lifetime missions: Claim all",
-        "android_state": "Untested",
-        "ios_state": "Untested",
-        "android_comment": "",
-        "ios_comment": "",
-        "related_issues": []
+      "id": "TC001",
+      "name": "Install Build",
+      "android_state": "Untested",
+      "ios_state": "Untested",
+      "comments": "a",
+      "related_issues": ["1","2","3","4"]
+    },
+    {
+      "id": "TC002",
+      "name": "Terms & Conditions",
+      "android_state": "Untested",
+      "ios_state": "Untested",
+      "comments": "",
+      "related_issues": []
+    },
+    {
+      "id": "TC003",
+      "name": "Birth Date",
+      "android_state": "Untested",
+      "ios_state": "Untested",
+      "comments": "",
+      "related_issues": []
+    },
+    {
+      "id": "TC004",
+      "name": "Login",
+      "android_state": "Untested",
+      "ios_state": "Untested",
+      "comments": "",
+      "related_issues": []
+    },
+    {
+      "id": "TC005",
+      "name": "Splash Screen",
+      "android_state": "Untested",
+      "ios_state": "Untested",
+      "comments": "",
+      "related_issues": []
+    },
+    {
+      "id": "TC006",
+      "name": "Loading screens",
+      "android_state": "Untested",
+      "ios_state": "Untested",
+      "comments": "",
+      "related_issues": []
+    },
+    {
+      "id": "TC007",
+      "name": "FTUE: Locked input",
+      "android_state": "Untested",
+      "ios_state": "Untested",
+      "comments": "",
+      "related_issues": []
+    },
+    {
+      "id": "TC008",
+      "name": "FTUE: Can't lose first fight",
+      "android_state": "Untested",
+      "ios_state": "Untested",
+      "comments": "",
+      "related_issues": []
+    },
+    {
+      "id": "TC009",
+      "name": "FTUE: Purchase free item",
+      "android_state": "Untested",
+      "ios_state": "Untested",
+      "comments": "",
+      "related_issues": []
+    },
+    {
+      "id": "TC010",
+      "name": "FTUE: Unlock wrestler",
+      "android_state": "Untested",
+      "ios_state": "Untested",
+      "comments": "",
+      "related_issues": []
+    },
+    {
+      "id": "TC011",
+      "name": "FTUE: Second fight is playable",
+      "android_state": "Untested",
+      "ios_state": "Untested",
+      "comments": "",
+      "related_issues": []
+    },
+    {
+      "id": "TC012",
+      "name": "FTUE: Level up",
+      "android_state": "Untested",
+      "ios_state": "Untested",
+      "comments": "",
+      "related_issues": []
+    },
+    {
+      "id": "TC013",
+      "name": "FTUE: Completed",
+      "android_state": "Untested",
+      "ios_state": "Untested",
+      "comments": "",
+      "related_issues": []
+    },
+    {
+      "id": "TC014",
+      "name": "Main Menu: Appearance and functionality",
+      "android_state": "Untested",
+      "ios_state": "Untested",
+      "comments": "",
+      "related_issues": []
+    },
+    {
+      "id": "TC015",
+      "name": "Main Menu: Currencies HUD",
+      "android_state": "Untested",
+      "ios_state": "Untested",
+      "comments": "",
+      "related_issues": []
+    },
+    {
+      "id": "TC016",
+      "name": "Main Menu: Player profile",
+      "android_state": "Untested",
+      "ios_state": "Untested",
+      "comments": "",
+      "related_issues": []
+    },
+    {
+      "id": "TC017",
+      "name": "Main Menu: Tabs functionality",
+      "android_state": "Untested",
+      "ios_state": "Untested",
+      "comments": "",
+      "related_issues": []
+    },
+    {
+      "id": "TC018",
+      "name": "Main Menu: Resume Campaign functionality",
+      "android_state": "Untested",
+      "ios_state": "Untested",
+      "comments": "",
+      "related_issues": []
+    },
+    {
+      "id": "TC019",
+      "name": "Main Menu: Notification badges",
+      "android_state": "Untested",
+      "ios_state": "Untested",
+      "comments": "",
+      "related_issues": []
+    },
+    {
+      "id": "TC020",
+      "name": "Player Profile: Change the Portrait",
+      "android_state": "Untested",
+      "ios_state": "Untested",
+      "comments": "",
+      "related_issues": []
+    },
+    {
+      "id": "TC021",
+      "name": "Player Profile: Change Username",
+      "android_state": "Untested",
+      "ios_state": "Untested",
+      "comments": "",
+      "related_issues": []
+    },
+    {
+      "id": "TC022",
+      "name": "Player Profile: Top 3 wrestlers are shown",
+      "android_state": "Untested",
+      "ios_state": "Untested",
+      "comments": "",
+      "related_issues": []
+    },
+    {
+      "id": "TC023",
+      "name": "Player Profile: Wallet alogin",
+      "android_state": "Untested",
+      "ios_state": "Untested",
+      "comments": "",
+      "related_issues": []
+    },
+    {
+      "id": "TC024",
+      "name": "Player Profile: Statistics",
+      "android_state": "Untested",
+      "ios_state": "Untested",
+      "comments": "",
+      "related_issues": []
+    },
+    {
+      "id": "TC025",
+      "name": "Player Profile: Level up animation",
+      "android_state": "Untested",
+      "ios_state": "Untested",
+      "comments": "",
+      "related_issues": []
+    },
+    {
+      "id": "TC026",
+      "name": "Inbox: Recieve messages",
+      "android_state": "Untested",
+      "ios_state": "Untested",
+      "comments": "",
+      "related_issues": []
+    },
+    {
+      "id": "TC027",
+      "name": "Inbox: Notification badge",
+      "android_state": "Untested",
+      "ios_state": "Untested",
+      "comments": "",
+      "related_issues": []
+    },
+    {
+      "id": "TC028",
+      "name": "Inbox: Delete messages",
+      "android_state": "Untested",
+      "ios_state": "Untested",
+      "comments": "",
+      "related_issues": []
+    },
+    {
+      "id": "TC029",
+      "name": "Inbox: Claim all button",
+      "android_state": "Untested",
+      "ios_state": "Untested",
+      "comments": "",
+      "related_issues": []
+    },
+    {
+      "id": "TC030",
+      "name": "Roster: Default order is A-Z, unlocked first",
+      "android_state": "Untested",
+      "ios_state": "Untested",
+      "comments": "",
+      "related_issues": []
+    },
+    {
+      "id": "TC031",
+      "name": "Roster: Change sorting",
+      "android_state": "Untested",
+      "ios_state": "Untested",
+      "comments": "",
+      "related_issues": []
+    },
+    {
+      "id": "TC032",
+      "name": "Roster: Rank up and level up functionality",
+      "android_state": "Untested",
+      "ios_state": "Untested",
+      "comments": "",
+      "related_issues": []
+    },
+    {
+      "id": "TC033",
+      "name": "Roster: Rank up and level up are locked for locked wrestlers",
+      "android_state": "Untested",
+      "ios_state": "Untested",
+      "comments": "",
+      "related_issues": []
+    },
+    {
+      "id": "TC034",
+      "name": "Roster: Unlock and level up",
+      "android_state": "Untested",
+      "ios_state": "Untested",
+      "comments": "",
+      "related_issues": []
+    },
+    {
+      "id": "TC035",
+      "name": "Roster: Power score is available and functional",
+      "android_state": "Untested",
+      "ios_state": "Untested",
+      "comments": "",
+      "related_issues": []
+    },
+    {
+      "id": "TC036",
+      "name": "Roster: Rank up a wrestler's moves",
+      "android_state": "Untested",
+      "ios_state": "Untested",
+      "comments": "",
+      "related_issues": []
+    },
+    {
+      "id": "TC037",
+      "name": "Roster: Craft all gear items for a wrestler",
+      "android_state": "Untested",
+      "ios_state": "Untested",
+      "comments": "",
+      "related_issues": []
+    },
+    {
+      "id": "TC038",
+      "name": "Roster: Level up gear items for a wrestler",
+      "android_state": "Untested",
+      "ios_state": "Untested",
+      "comments": "",
+      "related_issues": []
+    },
+    {
+      "id": "TC039",
+      "name": "Store: Currencies HUD",
+      "android_state": "Untested",
+      "ios_state": "Untested",
+      "comments": "",
+      "related_issues": []
+    },
+    {
+      "id": "TC040",
+      "name": "Store: FTUE Item does not reappear",
+      "android_state": "Untested",
+      "ios_state": "Untested",
+      "comments": "",
+      "related_issues": []
+    },
+    {
+      "id": "TC041",
+      "name": "Store: Purchase an item",
+      "android_state": "Untested",
+      "ios_state": "Untested",
+      "comments": "",
+      "related_issues": []
+    },
+    {
+      "id": "TC042",
+      "name": "Store: Limited items have a purchase limit",
+      "android_state": "Untested",
+      "ios_state": "Untested",
+      "comments": "",
+      "related_issues": []
+    },
+    {
+      "id": "TC043",
+      "name": "Store: Purchase an NFT",
+      "android_state": "Untested",
+      "ios_state": "Untested",
+      "comments": "",
+      "related_issues": []
+    },
+    {
+      "id": "TC044",
+      "name": "Store: Purchase an IAP character offer",
+      "android_state": "Untested",
+      "ios_state": "Untested",
+      "comments": "",
+      "related_issues": []
+    },
+    {
+      "id": "TC045",
+      "name": "Store: Purchase an IAP pack offer",
+      "android_state": "Untested",
+      "ios_state": "Untested",
+      "comments": "",
+      "related_issues": []
+    },
+    {
+      "id": "TC046",
+      "name": "Store: Purchase currency IAP",
+      "android_state": "Untested",
+      "ios_state": "Untested",
+      "comments": "",
+      "related_issues": []
+    },
+    {
+      "id": "TC047",
+      "name": "Store: \"New\" label disappears after first store visit",
+      "android_state": "Untested",
+      "ios_state": "Untested",
+      "comments": "",
+      "related_issues": []
+    },
+    {
+      "id": "TC048",
+      "name": "Store: Tooltips and info buttons functionality",
+      "android_state": "Untested",
+      "ios_state": "Untested",
+      "comments": "",
+      "related_issues": []
+    },
+    {
+      "id": "TC049",
+      "name": "Campaign: Screen displays correctly",
+      "android_state": "Untested",
+      "ios_state": "Untested",
+      "comments": "",
+      "related_issues": []
+    },
+    {
+      "id": "TC050",
+      "name": "Campaign: Lose functionality",
+      "android_state": "Untested",
+      "ios_state": "Untested",
+      "comments": "",
+      "related_issues": []
+    },
+    {
+      "id": "TC051",
+      "name": "Campaign: Win functionality",
+      "android_state": "Untested",
+      "ios_state": "Untested",
+      "comments": "",
+      "related_issues": []
+    },
+    {
+      "id": "TC052",
+      "name": "Campaign: Earn 1, 2, and 3 stars",
+      "android_state": "Untested",
+      "ios_state": "Untested",
+      "comments": "",
+      "related_issues": []
+    },
+    {
+      "id": "TC053",
+      "name": "Campaign: Rewards",
+      "android_state": "Untested",
+      "ios_state": "Untested",
+      "comments": "",
+      "related_issues": []
+    },
+    {
+      "id": "TC054",
+      "name": "Campaign: Verify only unlocked characters can be used",
+      "android_state": "Untested",
+      "ios_state": "Untested",
+      "comments": "",
+      "related_issues": []
+    },
+    {
+      "id": "TC055",
+      "name": "Campaign: Energy deduction",
+      "android_state": "Untested",
+      "ios_state": "Untested",
+      "comments": "",
+      "related_issues": []
+    },
+    {
+      "id": "TC056",
+      "name": "Battle: Pause and resume",
+      "android_state": "Untested",
+      "ios_state": "Untested",
+      "comments": "",
+      "related_issues": []
+    },
+    {
+      "id": "TC057",
+      "name": "Battle: Pause and quit",
+      "android_state": "Untested",
+      "ios_state": "Untested",
+      "comments": "",
+      "related_issues": []
+    },
+    {
+      "id": "TC058",
+      "name": "Battle: HP Bar functionality",
+      "android_state": "Untested",
+      "ios_state": "Untested",
+      "comments": "",
+      "related_issues": []
+    },
+    {
+      "id": "TC059",
+      "name": "Battle: Tooltips on characters",
+      "android_state": "Untested",
+      "ios_state": "Untested",
+      "comments": "",
+      "related_issues": []
+    },
+    {
+      "id": "TC060",
+      "name": "Battle: Status effect icons and tooltips",
+      "android_state": "Untested",
+      "ios_state": "Untested",
+      "comments": "",
+      "related_issues": []
+    },
+    {
+      "id": "TC061",
+      "name": "Battle: Tooltips pause the fight",
+      "android_state": "Untested",
+      "ios_state": "Untested",
+      "comments": "",
+      "related_issues": []
+    },
+    {
+      "id": "TC062",
+      "name": "Battle: Common moves can be tapped",
+      "android_state": "Untested",
+      "ios_state": "Untested",
+      "comments": "",
+      "related_issues": []
+    },
+    {
+      "id": "TC063",
+      "name": "Battle: Common moves deal damage",
+      "android_state": "Untested",
+      "ios_state": "Untested",
+      "comments": "",
+      "related_issues": []
+    },
+    {
+      "id": "TC064",
+      "name": "Battle: Special moves can be tapped",
+      "android_state": "Untested",
+      "ios_state": "Untested",
+      "comments": "",
+      "related_issues": []
+    },
+    {
+      "id": "TC065",
+      "name": "Battle: Special moves deal damage",
+      "android_state": "Untested",
+      "ios_state": "Untested",
+      "comments": "",
+      "related_issues": []
+    },
+    {
+      "id": "TC066",
+      "name": "Battle: Friend or foe outline",
+      "android_state": "Untested",
+      "ios_state": "Untested",
+      "comments": "",
+      "related_issues": []
+    },
+    {
+      "id": "TC067",
+      "name": "Battle: Finisher icon functionality",
+      "android_state": "Untested",
+      "ios_state": "Untested",
+      "comments": "",
+      "related_issues": []
+    },
+    {
+      "id": "TC068",
+      "name": "Battle: Finisher move functionality",
+      "android_state": "Untested",
+      "ios_state": "Untested",
+      "comments": "",
+      "related_issues": []
+    },
+    {
+      "id": "TC069",
+      "name": "Battle: Not using Finisher - Pindown",
+      "android_state": "Untested",
+      "ios_state": "Untested",
+      "comments": "",
+      "related_issues": []
+    },
+    {
+      "id": "TC070",
+      "name": "Challenges: Functionality",
+      "android_state": "Untested",
+      "ios_state": "Untested",
+      "comments": "",
+      "related_issues": []
+    },
+    {
+      "id": "TC071",
+      "name": "Challenges: Rewards are well defined",
+      "android_state": "Untested",
+      "ios_state": "Untested",
+      "comments": "",
+      "related_issues": []
+    },
+    {
+      "id": "TC072",
+      "name": "Challenges: Only 1 star gets displayed",
+      "android_state": "Untested",
+      "ios_state": "Untested",
+      "comments": "",
+      "related_issues": []
+    },
+    {
+      "id": "TC073",
+      "name": "Challenges: Progression",
+      "android_state": "Untested",
+      "ios_state": "Untested",
+      "comments": "",
+      "related_issues": []
+    },
+    {
+      "id": "TC074",
+      "name": "Challenges: Timers",
+      "android_state": "Untested",
+      "ios_state": "Untested",
+      "comments": "",
+      "related_issues": []
+    },
+    {
+      "id": "TC075",
+      "name": "Farming Events: Calendar correct",
+      "android_state": "Untested",
+      "ios_state": "Untested",
+      "comments": "",
+      "related_issues": []
+    },
+    {
+      "id": "TC076",
+      "name": "Farming Events: 3 matches limit",
+      "android_state": "Untested",
+      "ios_state": "Untested",
+      "comments": "",
+      "related_issues": []
+    },
+    {
+      "id": "TC077",
+      "name": "Farming Events: Autoplay works correctly",
+      "android_state": "Untested",
+      "ios_state": "Untested",
+      "comments": "",
+      "related_issues": []
+    },
+    {
+      "id": "TC078",
+      "name": "PvP Events: Forced to select defender on first entry",
+      "android_state": "Untested",
+      "ios_state": "Untested",
+      "comments": "",
+      "related_issues": []
+    },
+    {
+      "id": "TC079",
+      "name": "PvP Events: Defender selection",
+      "android_state": "Untested",
+      "ios_state": "Untested",
+      "comments": "",
+      "related_issues": []
+    },
+    {
+      "id": "TC080",
+      "name": "PvP Events: Play matches",
+      "android_state": "Untested",
+      "ios_state": "Untested",
+      "comments": "",
+      "related_issues": []
+    },
+    {
+      "id": "TC081",
+      "name": "PvP Events: Verify win and lose point conditions",
+      "android_state": "Untested",
+      "ios_state": "Untested",
+      "comments": "",
+      "related_issues": []
+    },
+    {
+      "id": "TC082",
+      "name": "PvP Events: Rewards unlock",
+      "android_state": "Untested",
+      "ios_state": "Untested",
+      "comments": "",
+      "related_issues": []
+    },
+    {
+      "id": "TC083",
+      "name": "PvP Events: Leaderboard updates",
+      "android_state": "Untested",
+      "ios_state": "Untested",
+      "comments": "",
+      "related_issues": []
+    },
+    {
+      "id": "TC084",
+      "name": "Daily login: Functionality",
+      "android_state": "Untested",
+      "ios_state": "Untested",
+      "comments": "",
+      "related_issues": []
+    },
+    {
+      "id": "TC085",
+      "name": "Daily login: Past rewards can be purchased",
+      "android_state": "Untested",
+      "ios_state": "Untested",
+      "comments": "",
+      "related_issues": []
+    },
+    {
+      "id": "TC086",
+      "name": "Daily missions: Functionality",
+      "android_state": "Untested",
+      "ios_state": "Untested",
+      "comments": "",
+      "related_issues": []
+    },
+    {
+      "id": "TC087",
+      "name": "Daily missions: Claim",
+      "android_state": "Untested",
+      "ios_state": "Untested",
+      "comments": "",
+      "related_issues": []
+    },
+    {
+      "id": "TC088",
+      "name": "Daily missions: Claim all",
+      "android_state": "Untested",
+      "ios_state": "Untested",
+      "comments": "",
+      "related_issues": []
+    },
+    {
+      "id": "TC089",
+      "name": "Weekly missions: Functionality",
+      "android_state": "Untested",
+      "ios_state": "Untested",
+      "comments": "",
+      "related_issues": []
+    },
+    {
+      "id": "TC090",
+      "name": "Weekly missions: Claim",
+      "android_state": "Untested",
+      "ios_state": "Untested",
+      "comments": "",
+      "related_issues": []
+    },
+    {
+      "id": "TC091",
+      "name": "Weekly missions: Claim all",
+      "android_state": "Untested",
+      "ios_state": "Untested",
+      "comments": "",
+      "related_issues": []
+    },
+    {
+      "id": "TC092",
+      "name": "Lifetime missions: Functionality",
+      "android_state": "Untested",
+      "ios_state": "Untested",
+      "comments": "",
+      "related_issues": []
+    },
+    {
+      "id": "TC093",
+      "name": "Lifetime missions: Claim",
+      "android_state": "Untested",
+      "ios_state": "Untested",
+      "comments": "",
+      "related_issues": []
+    },
+    {
+      "id": "TC094",
+      "name": "Lifetime missions: Claim all",
+      "android_state": "Untested",
+      "ios_state": "Untested",
+      "comments": "",
+      "related_issues": []
     }
-]
+  ]

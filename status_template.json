@@ -1,3 +1,4 @@
 {
-        "Status": ["Untested", "Failed", "Caution", "Cannot Test", "N/A", "Passed"]
+        "Status": ["Untested", "Failed", "Caution", "CNT", "N/A", "Passed"],
+        "JIRA": "https://wbdprod.atlassian.net/browse/"
 }
