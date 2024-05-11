@@ -32,7 +32,7 @@ class gui:
         self.relatedLabel.grid(row=2,column=0,pady=(10,5),padx=5)
         self.relatedEntry = ct.CTkTextbox(self.rightFrame,state='disabled')
         self.relatedEntry.grid(row=3,column=0,pady=5,padx=5)
-        self.relatedSend = ct.CTkButton(self.rightFrame,state='disabled',text='Save')
+        self.relatedSend = ct.CTkButton(self.rightFrame,state='disabled',text='Save',command=self.saveNote)
         self.relatedSend.grid(row=4,column=0,pady=5,padx=5)
         
         self.window.after(100,self.loadPossibleStati())
@@ -78,6 +78,7 @@ class gui:
             pass #write error message here
 
     def enableNotes(self, id, abutton):
+        self.currentNote = id
         comment = self.test_cases[id].comments
         issues = ', '.join(self.test_cases[id].related_issues)
         self.notesEntry.configure(state='normal')
@@ -86,6 +87,14 @@ class gui:
         self.relatedEntry.configure(state='normal')
         self.relatedEntry.delete(0.0,END)
         self.relatedEntry.insert(0.0,issues)
+        self.relatedSend.configure(state='normal')
+        
+    def saveNote(self):
+        comment = str(self.notesEntry.get(1.0,END))
+        issues = str(self.relatedEntry.get(1.0,END)).strip().split(', ')
+        self.test_cases[self.currentNote].comments = comment
+        self.test_cases[self.currentNote].related_issues = issues
+        print(self.test_cases[self.currentNote].comments,self.test_cases[self.currentNote].related_issues)
 
 class FrameTemplate:
     def __init__(self, parent, frameId, element: TestCase, states, gui):
@@ -118,7 +127,8 @@ class FrameTemplate:
                 frame.configure(fg_color='#7F8C8D')
             elif self.tc.android_state == 'CNT':
                 frame.configure(fg_color='#2980B9')
-        notesEnableButton = ct.CTkButton(frame,text="Notes»",command=lambda:gui.enableNotes(self.frame_id,notesEnableButton))
+        notesEnableButton = ct.CTkButton(frame,text="Notes»",command=lambda:gui.enableNotes(self.frame_id,notesEnableButton)) #Use the same method to trigger an API Post whenever you switch the state of a dropdown.
+        #keep going tomorrow, im burntout for the day
         notesEnableButton.grid(row=0,column=4,pady=5,padx=5)
 
 
