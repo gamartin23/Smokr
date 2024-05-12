@@ -2,6 +2,7 @@ from flask import Flask, request, jsonify
 import os, sys
 import json
 import random
+import copy
 import string
 
 app = Flask(__name__)
@@ -25,8 +26,9 @@ class SmokeData:
   
   def load_template(self):
     if template_data is None:
+      print('Its none')
       return
-    self.data = template_data.copy()
+    self.data = copy.deepcopy(template_data)
     self.generate_uuid()
 
   def generate_uuid(self):
@@ -82,7 +84,7 @@ def update_item_completely(item_id):
   item_to_update["ios_state"] = request.json["ios_state"]
   item_to_update["comments"] = request.json["comments"]
   item_to_update["related_issues"] = request.json["related_issues"]
-  return jsonify(smoke_data.data), 200 # OK status code
+  return jsonify(smoke_data.get_data()), 200 # OK status code
 
 @app.route("/debug/uuid")
 def get_debug_uuid():
@@ -92,4 +94,4 @@ def get_debug_uuid():
     return jsonify({'message': 'No smoke test is being run'})
 
 if __name__ == "__main__":
-  app.run(debug=True)
+  app.run(debug=False)
