@@ -4,6 +4,9 @@ import json
 from testcase import TestCase
 import requests
 import copy
+import os, sys
+from PIL import Image
+import random
 
 class gui:
     def __init__(self) -> None:
@@ -19,67 +22,153 @@ class gui:
         self.window = ct.CTk()
         self.version = 1.0
         self.window.title(f'Smokr {self.version}')
-        self.window.geometry("800x500")
+        self.window.geometry("1000x700")
+        #self.window.grid_rowconfigure((1),weight=0,minsize=1)
         ct.set_appearance_mode('dark')
         #self.window.iconbitmap(self.resourcePath('smokr.ico'))
         
-        self.mainFrame = ct.CTkFrame(self.window)
-        self.mainFrame.grid(row=1,column=0,padx=10,pady=10,sticky=NSEW)
+        self.mainFrame = ct.CTkFrame(self.window,fg_color='transparent')
+        self.mainFrame.grid(row=1,column=0,padx=(10,0),pady=(10,5),sticky=N,rowspan=3)
         self.mainFrame.grid_columnconfigure((0),weight=1)
         self.mainFrame.grid_rowconfigure(0,weight=1)
+        self.updatebutton = ct.CTkButton(self.window,text='Update',command=self.update,width=260,height=40)
+        #self.updatebutton.grid(row=1,column=1,padx=(5,10),pady=5,sticky=N)
         self.rightFrame = ct.CTkFrame(self.window)
-        self.rightFrame.grid(row=1,column=1,pady=10,padx=10,sticky=EW)
-        self.scroller = ct.CTkScrollableFrame(self.mainFrame,width=650,height=500)
+        self.rightFrame.grid(row=1,column=1,pady=(5),padx=(0,10),sticky=NE)
+        self.rightFrame2 = ct.CTkFrame(self.window)
+        self.rightFrame2.grid(row=2,column=1,pady=(0,10),padx=(0,10),sticky=NSEW)
+        self.scroller = ct.CTkScrollableFrame(self.mainFrame,width=650,height=500,)
         #self.scroller.grid(row=0,column=0,pady=10,padx=10)
         
-        self.notesLabel = ct.CTkLabel(self.rightFrame,text='Notes')
-        self.notesLabel.grid(row=0,column=0,pady=5,padx=5)
-        self.notesEntry = ct.CTkTextbox(self.rightFrame,state='disabled')
-        self.notesEntry.grid(row=1,column=0,pady=5,padx=5)
-        self.relatedLabel = ct.CTkLabel(self.rightFrame,text='Related issues')
-        self.relatedLabel.grid(row=2,column=0,pady=(10,5),padx=5)
-        self.relatedEntry = ct.CTkTextbox(self.rightFrame,state='disabled')
-        self.relatedEntry.grid(row=3,column=0,pady=5,padx=5)
+        self.notesLabel = ct.CTkLabel(self.rightFrame,text='Notes',font=('helvetica',16,'bold'),text_color='#888888')
+        self.notesLabel.grid(row=0,column=0,pady=(10,5),padx=10,sticky=SW)
+        self.notesEntry = ct.CTkTextbox(self.rightFrame,state='disabled',height=80,width=250)
+        self.notesEntry.grid(row=1,column=0,pady=(5,10),padx=10)
+        self.relatedLabel = ct.CTkLabel(self.rightFrame,text='Related issues',font=('helvetica',16,'bold'),text_color='#888888')
+        self.relatedLabel.grid(row=2,column=0,pady=(10,5),padx=10,sticky=SE)
+        self.relatedEntry = ct.CTkTextbox(self.rightFrame,state='disabled',height=80,width=250)
+        self.relatedEntry.grid(row=3,column=0,pady=(5),padx=10)
         self.relatedSend = ct.CTkButton(self.rightFrame,state='disabled',text='Save',command=self.saveNote)
-        self.relatedSend.grid(row=4,column=0,pady=5,padx=5)
-        self.testbutton = ct.CTkButton(self.rightFrame,text='Test',command=self.updateFrame)
-        self.testbutton.grid(row=5,column=0,pady=5,padx=5)
+        self.relatedSend.grid(row=4,column=0,pady=(5,10),padx=10)
         
         self.frameAbove = ct.CTkFrame(self.window)
-        self.frameAbove.grid(row=0,column=0, pady=10,padx=10,sticky=NSEW,columnspan=2)
+        self.frameAbove.grid(row=0,column=0, pady=(10,5),padx=10,sticky=EW,columnspan=2)
+        self.frameAbove.grid_columnconfigure(0,weight=0,minsize=1000)
         
-        self.title = ct.CTkLabel(self.frameAbove,text='Smokr')
-        self.title.grid(row=0,column=1,pady=10,padx=10,sticky=W)
-        self.workingon = ct.CTkLabel(self.frameAbove,text=f'Working on: {self.uuid}')
-        self.workingon.grid(row=1,column=1,pady=10,padx=10,sticky=W)
-        self.frameControls = ct.CTkFrame(self.frameAbove)
-        self.frameControls.grid(row=0,column=2,rowspan=2,pady=10,padx=10,sticky=NS)
-        self.markAllPassed = ct.CTkButton(self.frameControls, text='Mark all passed')
-        self.markAllPassed.grid(row=0,column=0,pady=5,padx=(5),sticky=NSEW)
-        self.markAllPassed = ct.CTkButton(self.frameControls, text='Mark all failed')
-        self.markAllPassed.grid(row=1,column=0,pady=5,padx=(5),sticky=NSEW)
-        self.markAllPassed = ct.CTkButton(self.frameControls, text='Mark all blocked')
-        self.markAllPassed.grid(row=0,column=1,pady=5,padx=5,sticky=NSEW)
-        self.markAllPassed = ct.CTkButton(self.frameControls, text='Mark all untested')
-        self.markAllPassed.grid(row=1,column=1,pady=5,padx=5,sticky=NSEW)
-        self.newSmokeButton = ct.CTkButton(self.frameControls,text='New smoke', command=self.newSmoke)
-        self.newSmokeButton.grid(row=0,column=2,pady=5,padx=(5),sticky=NSEW)
-        self.newSmokeButton = ct.CTkButton(self.frameControls,text='Mark as done', command=self.doneSmoke)
-        self.newSmokeButton.grid(row=1,column=2,pady=5,padx=(5),sticky=NSEW)
+        self.smokrimg = ct.CTkImage(Image.open(self.resourcePath("img/titler.png")),size=(188,49))
+        self.smokrimg2 = ct.CTkImage(Image.open(self.resourcePath("img/titler2.png")),size=(188,49))
+        self.title = ct.CTkLabel(self.frameAbove,text='',image=self.smokrimg)
+        self.title.grid(row=0,column=0,pady=10,padx=10,sticky=W)
+        self.title.bind('<Enter>',self.switcheroo)
+        self.title.bind('<Leave>',self.deswitcheroo)
+        self.workingon = ct.CTkLabel(self.frameAbove,text=f'Working on: {self.uuid}',font=('helvetica',28,'bold'),text_color='#888888')
+        self.workingon.grid(row=1,column=0,pady=10,padx=10,sticky=SW)
+        self.iconaboot = ct.CTkImage(Image.open(self.resourcePath("img/appicon.png")),size=(100,100))
+        self.buttonaboot = ct.CTkButton(self.frameAbove,text='',image=self.iconaboot,command=self.aboot,height=100,width=100,fg_color='#2b2b2b',hover_color='#2b2b2b')
+        self.buttonaboot.grid(row=0,column=0,rowspan=2,sticky=E,pady=10,padx=10)
         
+        self.frameControls = ct.CTkFrame(self.mainFrame)
+        self.frameControls.grid(row=2,column=0,pady=(0,10),padx=10,sticky=E)
         
+        self.aidFrame = ct.CTkFrame(self.mainFrame,fg_color='transparent',bg_color='transparent')
+        self.aidFrame.grid(row=0,column=0,pady=0,padx=0,sticky=N)
+        self.aidFrame.grid_columnconfigure(1,weight=0,minsize=310)
+        self.aidFrame.grid_columnconfigure((0,2,3),weight=0,minsize=80)
+        self.aidFrame.grid_columnconfigure(4,weight=0,minsize=175)
+        self.aidId = ct.CTkLabel(self.aidFrame,text='#',font=('helvetica',12,'bold'),text_color='#888888')
+        self.aidId.grid(row=0,column=0,pady=5,padx=5,sticky=NSEW)
+        self.aidName = ct.CTkLabel(self.aidFrame,text='Description',font=('helvetica',12,'bold'),text_color='#888888')
+        self.aidName.grid(row=0,column=1,pady=5,padx=5,sticky=NSEW)
+        self.iosimg = ct.CTkImage(Image.open(self.resourcePath("img/ios.png")))
+        self.aidIos = ct.CTkLabel(self.aidFrame,text='',image=self.iosimg)
+        self.aidIos.grid(row=0,column=2,pady=5,padx=5,sticky=NSEW)
+        self.andimg = ct.CTkImage(Image.open(self.resourcePath("img/android.png")))
+        self.aidAnd = ct.CTkLabel(self.aidFrame,text='',image=self.andimg)
+        self.aidAnd.grid(row=0,column=3,pady=5,padx=5,sticky=E)
+        
+        self.newSmokeButton = ct.CTkButton(self.frameControls,text='New smoke', command=self.newSmoke,width=90)
+        self.newSmokeButton.grid(row=0,column=0,pady=5,padx=(5),sticky=NSEW)
+        self.newSmokeButton = ct.CTkButton(self.frameControls,text='Mark as done', command=self.doneSmoke,width=90)
+        self.newSmokeButton.grid(row=0,column=1,pady=5,padx=(5),sticky=NSEW)
+                
         self.window.after(100,self.loadPossibleStati())
         self.window.after(200,self.callJson())
         self.window.after(300,self.generateFrames())
                 
         self.window.mainloop()
     
+    def switcheroo(self,*args):
+        self.title.configure(require_redraw=True,image=self.smokrimg2)
+        
+    def deswitcheroo(self,*args):
+        self.title.configure(require_redraw=True,image=self.smokrimg)
+    
+    def aboot(self):
+        aboutR=ct.CTkToplevel()
+        ws=self.window.winfo_screenwidth()
+        hs=self.window.winfo_screenheight()
+        ws=(ws/2)
+        hs=(hs/2)
+        c=(ws-150)
+        d=(hs-100)
+        aboutR.geometry('%dx%d+%d+%d' % (300, 250, c, d))
+        aboutR.resizable(False,False)
+        aboutR.attributes('-topmost',True)
+        #aboutR.iconbitmap('icon.ico')
+        aboutR.title(f'About /recoder {self.version}')
+        
+        randomIQ=random.randint(1,20)
+        if randomIQ == 1:
+            randomIQ = f'{randomIQ}. Critical fail'
+        elif randomIQ == 20:
+            randomIQ = f'Nat {randomIQ}.'
+        elif randomIQ == 19:
+            randomIQ = f'{randomIQ}. Lmao'
+        letrita=('Helvetica',11)
+        
+        needsAn=['8','11']
+        
+        labelabout=ct.CTkLabel(master=aboutR,text='Tool made with love in Tucumán.\nCode and UI by Kovadev.')
+        labelabout.pack(pady=(25,10),padx=5,side=TOP)        
+        aboutRF=ct.CTkFrame(master=aboutR)
+        aboutRF.pack(pady=0,padx=0)    
+        self.imageLica=ct.CTkImage(dark_image=(Image.open('img/appicon.png')),size=(90,90))
+        buttonimgLica=ct.CTkButton(master=aboutRF,image=self.imageLica,text='',border_width=0,hover_color='#242424',fg_color='#242424',border_color='#242424',border_spacing=2,width=70)
+        buttonimgLica.pack(pady=0,padx=(2,0),side=RIGHT)
+        imageKova=ct.CTkImage(dark_image=Image.open('img/kovasp.png'),size=(90,90))
+        buttonimgKova=ct.CTkButton(master=aboutRF,image=imageKova,text='',border_width=0,hover_color='#242424',fg_color='#242424',border_color='#242424',border_spacing=2,width=70)
+        buttonimgKova.pack(pady=0,padx=(0,2),side=LEFT)
+
+        if '8' in str(randomIQ) or '18' in str(randomIQ) or '11' in str(randomIQ):
+            labelabout2=ct.CTkLabel(master=aboutR,text=f'Kova tools.  You rolled an {randomIQ}',font=(letrita))
+        else:
+            labelabout2=ct.CTkLabel(master=aboutR,text=f'Kova tools.  You rolled a {randomIQ}',font=(letrita))
+        labelabout2.pack(pady=5,padx=5)
+        buttonok=ct.CTkButton(master=aboutR,text='Ok',command=aboutR.destroy)
+        buttonok.pack(pady=5,padx=5)
+        if ct.get_appearance_mode()=='Light':
+            buttonimgLica.configure(hover_color='#ebebeb',fg_color='#ebebeb',border_color='#ebebeb')
+            buttonimgKova.configure(hover_color='#ebebeb',fg_color='#ebebeb',border_color='#ebebeb')
+        #aboutR.after(200,lambda: aboutR.iconbitmap('icon.ico'))
+        aboutR.mainloop()
+    
+    def resourcePath(args,relativePath):  # Function for relative paths
+        basePath=getattr(sys,'_MEIPASS',os.path.dirname(os.path.abspath(__file__)))
+        print(basePath)
+        print(relativePath)
+        return os.path.join(basePath,relativePath)
+    
     def loadPossibleStati(self):
-        with open('status_template.json', "r") as tcstatus: #remember to turn this into api calls
+        with open(self.resourcePath('status_template.json'), "r") as tcstatus: #remember to turn this into api calls
             data = json.load(tcstatus)
         self.stati = []
         for status in data["Status"]:
             self.stati.append(status)
+    
+    def update(self):
+        self.deleteFrames()
+        self.callJson()
+        self.generateFrames()
     
     def callJson(self):
         endpoint = self.endpoint
@@ -107,7 +196,7 @@ class gui:
             self.scroller.grid_remove()
         except:
             pass #just dont do anything if its not yet packed
-        self.scroller.grid(row=0,column=0,pady=10,padx=10,sticky=EW)
+        self.scroller.grid(row=1,column=0,pady=(2,10),padx=(0,10),sticky=EW,columnspan=5)
         self.scroller.grid_columnconfigure((0),weight=3,pad=5)
         try:
             for testcase in self.test_cases:
@@ -220,10 +309,7 @@ class gui:
         except:
             pass #error message here
 
-#FALTA: Functionalidad de botones
 #FALTA: Mensaje de error para botones
-#FALTA: Titulo de lista
-#FALTA: Themeing
 #FALTA: Grafico de completado android/ios
 #FALTA: TOODO ERROR HANDLING
 
@@ -235,12 +321,14 @@ class FrameTemplate:
         self.tc = element
         
         self.frame = ct.CTkFrame(parent)
-        self.frame.grid(row=self.frame_id,column=0,pady=5,padx=5,sticky=EW,columnspan=2)
+        if int(self.frame_id) % 2 == 0:
+            self.frame.configure(fg_color='#3b3b3b')
+        self.frame.grid(row=self.frame_id,column=0,pady=5,padx=5,sticky=EW,columnspan=2,)
         self.frame.grid_columnconfigure(1,weight=1,uniform='column',minsize=200)
         self.frame.grid_rowconfigure(0,weight=1)
         labelTc = ct.CTkLabel(self.frame,text=f'{self.tc["id"]}')
         labelTc.grid(row=0,column=0,pady=5,padx=10)
-        labelName = ct.CTkLabel(self.frame,text=f'{self.tc["name"]}',wraplength=200,compound='left')
+        labelName = ct.CTkLabel(self.frame,text=f'{self.tc["name"]}',wraplength=200,compound='left',justify='left')
         labelName.grid(row=0,column=1,pady=5,padx=10,sticky=W)
         self.dropStatusIos = ct.CTkComboBox(self.frame,values=states,width=90,state='readonly', command=self.changestateIos)
         self.dropStatusIos.grid(row=0,column=2,pady=5,padx=10,sticky=NSEW)
