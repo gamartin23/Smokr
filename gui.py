@@ -6,6 +6,7 @@ import requests
 import copy
 import os, sys
 from PIL import Image
+import CTkPieChart
 import random
 
 class gui:
@@ -21,8 +22,8 @@ class gui:
         
         self.window = ct.CTk()
         self.version = 1.0
-        self.window.title(f'Smokr {self.version}')
-        self.window.geometry("1000x700")
+        self.window.title(f'Smokr - {self.uuid}')
+        self.window.geometry("1047x700")
         #self.window.grid_rowconfigure((1),weight=0,minsize=1)
         ct.set_appearance_mode('dark')
         #self.window.iconbitmap(self.resourcePath('smokr.ico'))
@@ -34,26 +35,26 @@ class gui:
         self.updatebutton = ct.CTkButton(self.window,text='Update',command=self.update,width=260,height=40)
         #self.updatebutton.grid(row=1,column=1,padx=(5,10),pady=5,sticky=N)
         self.rightFrame = ct.CTkFrame(self.window)
-        self.rightFrame.grid(row=1,column=1,pady=(5),padx=(0,10),sticky=NE)
+        self.rightFrame.grid(row=1,column=1,pady=(5),padx=(0,10),sticky=NSEW)
         self.rightFrame2 = ct.CTkFrame(self.window)
-        self.rightFrame2.grid(row=2,column=1,pady=(0,10),padx=(0,10),sticky=NSEW)
-        self.scroller = ct.CTkScrollableFrame(self.mainFrame,width=650,height=500,)
+        self.rightFrame2.grid(row=2,column=1,pady=(5,10),padx=(0,10),sticky=NW)
+        self.scroller = ct.CTkScrollableFrame(self.mainFrame,width=650,height=408,)
         #self.scroller.grid(row=0,column=0,pady=10,padx=10)
         
         self.notesLabel = ct.CTkLabel(self.rightFrame,text='Notes',font=('helvetica',16,'bold'),text_color='#888888')
         self.notesLabel.grid(row=0,column=0,pady=(10,5),padx=10,sticky=SW)
-        self.notesEntry = ct.CTkTextbox(self.rightFrame,state='disabled',height=80,width=250)
-        self.notesEntry.grid(row=1,column=0,pady=(5,10),padx=10)
+        self.notesEntry = ct.CTkTextbox(self.rightFrame,state='disabled',height=80,width=280)
+        self.notesEntry.grid(row=1,column=0,pady=(5,10),padx=10,sticky=EW)
         self.relatedLabel = ct.CTkLabel(self.rightFrame,text='Related issues',font=('helvetica',16,'bold'),text_color='#888888')
         self.relatedLabel.grid(row=2,column=0,pady=(10,5),padx=10,sticky=SE)
-        self.relatedEntry = ct.CTkTextbox(self.rightFrame,state='disabled',height=80,width=250)
-        self.relatedEntry.grid(row=3,column=0,pady=(5),padx=10)
-        self.relatedSend = ct.CTkButton(self.rightFrame,state='disabled',text='Save',command=self.saveNote)
+        self.relatedEntry = ct.CTkTextbox(self.rightFrame,state='disabled',height=80,width=280)
+        self.relatedEntry.grid(row=3,column=0,pady=(5),padx=10,sticky=EW)
+        self.relatedSend = ct.CTkButton(self.rightFrame,state='disabled',text='Save',command=self.saveNote,fg_color='#C62828',hover_color='#991F1F')
         self.relatedSend.grid(row=4,column=0,pady=(5,10),padx=10)
         
         self.frameAbove = ct.CTkFrame(self.window)
         self.frameAbove.grid(row=0,column=0, pady=(10,5),padx=10,sticky=EW,columnspan=2)
-        self.frameAbove.grid_columnconfigure(0,weight=0,minsize=1000)
+        self.frameAbove.grid_columnconfigure(0,weight=0,minsize=1020)
         
         self.smokrimg = ct.CTkImage(Image.open(self.resourcePath("img/titler.png")),size=(188,49))
         self.smokrimg2 = ct.CTkImage(Image.open(self.resourcePath("img/titler2.png")),size=(188,49))
@@ -63,15 +64,15 @@ class gui:
         self.title.bind('<Leave>',self.deswitcheroo)
         self.workingon = ct.CTkLabel(self.frameAbove,text=f'Working on: {self.uuid}',font=('helvetica',28,'bold'),text_color='#888888')
         self.workingon.grid(row=1,column=0,pady=10,padx=10,sticky=SW)
-        self.iconaboot = ct.CTkImage(Image.open(self.resourcePath("img/appicon.png")),size=(100,100))
-        self.buttonaboot = ct.CTkButton(self.frameAbove,text='',image=self.iconaboot,command=self.aboot,height=100,width=100,fg_color='#2b2b2b',hover_color='#2b2b2b')
+        self.iconaboot = ct.CTkImage(Image.open(self.resourcePath("img/appicon.png")),size=(120,120))
+        self.buttonaboot = ct.CTkButton(self.frameAbove,text='',image=self.iconaboot,command=self.aboot,height=120,width=120,fg_color='#2b2b2b',hover_color='#2b2b2b')
         self.buttonaboot.grid(row=0,column=0,rowspan=2,sticky=E,pady=10,padx=10)
         
         self.frameControls = ct.CTkFrame(self.mainFrame)
         self.frameControls.grid(row=2,column=0,pady=(0,10),padx=10,sticky=E)
         
         self.aidFrame = ct.CTkFrame(self.mainFrame,fg_color='transparent',bg_color='transparent')
-        self.aidFrame.grid(row=0,column=0,pady=0,padx=0,sticky=N)
+        self.aidFrame.grid(row=0,column=0,pady=0,padx=0,sticky=NW)
         self.aidFrame.grid_columnconfigure(1,weight=0,minsize=310)
         self.aidFrame.grid_columnconfigure((0,2,3),weight=0,minsize=80)
         self.aidFrame.grid_columnconfigure(4,weight=0,minsize=175)
@@ -86,14 +87,25 @@ class gui:
         self.aidAnd = ct.CTkLabel(self.aidFrame,text='',image=self.andimg)
         self.aidAnd.grid(row=0,column=3,pady=5,padx=5,sticky=E)
         
-        self.newSmokeButton = ct.CTkButton(self.frameControls,text='New smoke', command=self.newSmoke,width=90)
+        self.newSmokeButton = ct.CTkButton(self.frameControls,text='New smoke', command=self.newSmoke,width=90,fg_color='#C62828',hover_color='#991F1F')
         self.newSmokeButton.grid(row=0,column=0,pady=5,padx=(5),sticky=NSEW)
-        self.newSmokeButton = ct.CTkButton(self.frameControls,text='Mark as done', command=self.doneSmoke,width=90)
+        self.newSmokeButton = ct.CTkButton(self.frameControls,text='Mark as done', command=self.doneSmoke,width=90,fg_color='#C62828',hover_color='#991F1F')
         self.newSmokeButton.grid(row=0,column=1,pady=5,padx=(5),sticky=NSEW)
+                
+        self.charttitle1 = ct.CTkLabel(self.rightFrame2,text='iOS',font=('helvetica',18,'bold'),text_color='#888888')
+        self.charttitle1.grid(row=0,column=0,pady=5,padx=5,sticky=NSEW)     
+        self.charttitle2 = ct.CTkLabel(self.rightFrame2,text='Android',font=('helvetica',18,'bold'),text_color='#888888')
+        self.charttitle2.grid(row=0,column=1,pady=5,padx=5,sticky=NSEW)           
+        self.piechartAnd = CTkPieChart.CTkPieChart(self.rightFrame2,radius=130)
+        self.piechartAnd.grid(row=1,column=1,pady=10,padx=10,sticky=NE)
+        self.piechartIos = CTkPieChart.CTkPieChart(self.rightFrame2,radius=130)
+        self.piechartIos.grid(row=1,column=0,pady=10,padx=10,sticky=NE)
+
                 
         self.window.after(100,self.loadPossibleStati())
         self.window.after(200,self.callJson())
         self.window.after(300,self.generateFrames())
+        self.window.after(400,self.updateCharts())
                 
         self.window.mainloop()
     
@@ -115,7 +127,7 @@ class gui:
         aboutR.resizable(False,False)
         aboutR.attributes('-topmost',True)
         #aboutR.iconbitmap('icon.ico')
-        aboutR.title(f'About /recoder {self.version}')
+        aboutR.title(f'About Smokr')
         
         randomIQ=random.randint(1,20)
         if randomIQ == 1:
@@ -169,6 +181,7 @@ class gui:
         self.deleteFrames()
         self.callJson()
         self.generateFrames()
+        self.updateCharts()
     
     def callJson(self):
         endpoint = self.endpoint
@@ -188,7 +201,32 @@ class gui:
         except Exception as e:
             print(e)
             # pass #have an error message
-                     
+    
+    def updateCharts(self):
+        self.percentageAndroid = {state: 0 for state in self.stati}
+        self.percentageIos = {state: 0 for state in self.stati}
+        for test_case in self.test_cases:
+            self.percentageAndroid[test_case.get("android_state", "Untested")] += 1
+            self.percentageIos[test_case.get("ios_state", "Untested")] += 1
+        for key, value in self.percentageAndroid.items():
+            self.piechartAnd.add(key, value)
+        for key, value in self.percentageIos.items():
+            self.piechartIos.add(key, value)
+        self.piechartAnd.update('Passed',color='#27AE60')
+        self.piechartAnd.update('Untested',color='#5f5f5f',text_color='#ffffff')
+        self.piechartAnd.update('Failed',color='#C2392B')
+        self.piechartAnd.update('Caution',color='#D9A736',text_color=None)
+        self.piechartAnd.update('N/A',color='#7F8C8D')
+        self.piechartAnd.update('CNT',color='#2980B9')
+        self.piechartAnd.update('Blocked',color='#000000',text_color='#ffffff')
+        self.piechartIos.update('Passed',color='#27AE60')
+        self.piechartIos.update('Untested',color='#5f5f5f',text_color='#ffffff')
+        self.piechartIos.update('Failed',color='#C2392B')
+        self.piechartIos.update('Caution',color='#D9A736')
+        self.piechartIos.update('N/A',color='#7F8C8D')
+        self.piechartIos.update('CNT',color='#2980B9')
+        self.piechartIos.update('Blocked',color='#000000',text_color='#ffffff')
+     
     def generateFrames(self):
         self.frames = {}
         self.frameId = 0
@@ -196,7 +234,7 @@ class gui:
             self.scroller.grid_remove()
         except:
             pass #just dont do anything if its not yet packed
-        self.scroller.grid(row=1,column=0,pady=(2,10),padx=(0,10),sticky=EW,columnspan=5)
+        self.scroller.grid(row=1,column=0,pady=(5,7),padx=(0,10),sticky=EW,columnspan=5)
         self.scroller.grid_columnconfigure((0),weight=3,pad=5)
         try:
             for testcase in self.test_cases:
@@ -236,12 +274,14 @@ class gui:
         self.updateApi(self.test_cases[id],id)
         listToUpdate = self.differences(self.oldData,self.test_cases)
         self.updateFrame(listToUpdate)
+        self.updateCharts()
         
     def changeStateAnd(self,state,id):
         self.test_cases[id]["android_state"] = state
         self.updateApi(self.test_cases[id],id)
         listToUpdate = self.differences(self.oldData,self.test_cases)
         self.updateFrame(listToUpdate)    
+        self.updateCharts()
         
     def updateApi(self,item,index):
         updater = f'{self.endpoint}/{index}'
@@ -295,11 +335,13 @@ class gui:
             response = requests.get(f'{self.endpoint}/new_smoke')
             data=response.json()
             self.test_cases = data
+            self.window.title(f'Smokr - {self.uuid}')
         except:
             pass #error message here
         self.callJson() 
         self.deleteFrames()
         self.generateFrames() 
+        self.updateCharts()
         
     def doneSmoke(self):
         try:
@@ -312,6 +354,7 @@ class gui:
 #FALTA: Mensaje de error para botones
 #FALTA: Grafico de completado android/ios
 #FALTA: TOODO ERROR HANDLING
+#FALTA: Autoupdate. API o Client-side?
 
 class FrameTemplate:
     def __init__(self, parent, frameId, element: TestCase, states, gui):
@@ -347,7 +390,7 @@ class FrameTemplate:
                 self.frame.configure(fg_color='#7F8C8D')
             elif self.tc["android_state"] == 'CNT':
                 self.frame.configure(fg_color='#2980B9')
-        notesEnableButton = ct.CTkButton(self.frame,text="Notes»",command=lambda:gui.enableNotes(self.frame_id,notesEnableButton),width=80) #Use the same method to trigger an API Post whenever you switch the state of a dropdown.
+        notesEnableButton = ct.CTkButton(self.frame,text="Notes»",command=lambda:gui.enableNotes(self.frame_id,notesEnableButton),width=80,fg_color='#C62828',hover_color='#991F1F') #Use the same method to trigger an API Post whenever you switch the state of a dropdown.
         #keep going tomorrow, im burntout for the day
         notesEnableButton.grid(row=0,column=4,pady=5,padx=10)
 
